@@ -5,7 +5,7 @@ LABEL AboutImage "Debian:10_VS-Code-Server_SubImage"
 LABEL Maintainer "Krishna Choudhary <http://krishna-krishk216.vercel.app/>"
 
 #Code-Server Version
-ENV	CS_VERSION=4.2.0 \
+ENV	CS_VERSION=4.3.0 \
 #Code-Server login type: {password, none}
 	AUTH_TYPE="password" \
 #Code-Server login password (If AUTH_TYPE=password)
