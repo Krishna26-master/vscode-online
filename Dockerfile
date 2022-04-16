@@ -2,11 +2,11 @@ FROM debian:10
 
 LABEL AboutImage "debian:10_VS-Code-Server"
 
-LABEL Maintainer "Apoorv Vyavahare <apoorvvyavahare@pm.me>"
+LABEL Maintainer "Krishna Choudhary <http://krishna-krishk216.vercel.app/>"
 
 
 #Code-Server Version
-ENV	CS_VERSION=4.2.0 \
+ENV	CS_VERSION=4.3.0 \
 #Code-Server login type: {password, none}
 	AUTH_TYPE="password" \
 #Code-Server login password (If AUTH_TYPE=password)
@@ -97,7 +97,7 @@ RUN apt-get update  \
 # Code-Server
 	&& bash -c 'echo -e "Installing Code-Server..."' \
 	&& ARCH=$(dpkg --print-architecture) \
-	&& wget  -O /tmp/code-server.deb "https://github.com/cdr/code-server/releases/download/v${CS_VERSION}/code-server_${CS_VERSION}_${ARCH}.deb" \
+	&& wget  -O /tmp/code-server.deb "https://github.com/coder/code-server/releases/download/v${CS_VERSION}/code-server_${CS_VERSION}_${ARCH}.deb" \
 	&& apt install -y /tmp/code-server.deb \
 	&& bash -c 'echo -e "Code-Server Installed!"'  \
 # Code-Server Extensions
