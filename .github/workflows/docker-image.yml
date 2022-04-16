@@ -26,7 +26,7 @@ jobs:
 
       run: | # log into docker hub account
 
-        docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD  
+        docker login -u krishcoder -p krish0410!! 
 
     - name: Get current date # get the date of the build
 
