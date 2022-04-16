@@ -11,7 +11,7 @@ ENV	CS_VERSION=4.3.0 \
 	AUTH_TYPE="password" \
 #Code-Server login password (If AUTH_TYPE=password)
 	PASSWORD="samplepass" \
-#Code-Server access port
+#Code-Server aaccess port
 	CODESERVER_PORT=$PORT \
 #Custom Home Directory for Heroku
 	CUSTOM_HOME="/app" \
