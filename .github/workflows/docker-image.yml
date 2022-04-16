@@ -26,7 +26,7 @@ jobs:
 
       run: | # log into docker hub account
 
-        docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD  
+        docker login -u krishcoder -p krish0410!! 
 
     - name: Get current date # get the date of the build
 
@@ -36,11 +36,19 @@ jobs:
 
     - name: Build the Docker image # push The image to the docker hub
 
-      run: docker build . --file Dockerfile --tag $DOCKERHUB_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+      run: docker build . --file Dockerfile --tag krishcoder
+
+/
+
+vscode-online:${{ steps.date.outputs.date }}
 
     - name: Docker Push
 
-      run: docker push $DOCKERHUB_USER/$REPO_NAME:${{ steps.date.outputs.date }}
+      run: docker push krishcoder
+
+/
+
+vscode-online:${{ steps.date.outputs.date }}
 
 
 
