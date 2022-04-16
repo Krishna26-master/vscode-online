@@ -2,7 +2,7 @@ name: This a workflow title
 
 on: [push] # When pushing to any branch then run this action
 
-# Env variable
+# Env variables
 
 env:
 
