@@ -1,6 +1,6 @@
 name: This a workflow title 
 
-on: workflow_dispatch # When pushing to any branch then run this action
+on: [pull_request] # When pushing to any branch then run this action
 
 # Env variables
 
