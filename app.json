@@ -1,6 +1,6 @@
 {
     "name": "Code-Server",
-    "description": "Code-Server with code-ready environment ",
+    "description": "Code-Server with code-readyy environment ",
     "repository": "https://github.com/krishk216/vscode-online.git",
     "logo": "https://raw.githubusercontent.com/vital987/code-server/master/assets/icon-dark.png",
     "keywords": ["docker", "code-server", "coder", "cdr", "c", "clojure", "cpp", "csharp", "go", "java", "js", "javascript", "lua", "perl", "perl6","powershell", "python", "r", "raku", "ruby", "shellscript", "scala", "swift", "bash", "ubuntu", "focal", "20.04", "remote", "vscode", "visual-studio", "vscode-server"],
