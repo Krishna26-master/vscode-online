@@ -6,7 +6,7 @@ LABEL Maintainer "Apoorv Vyavahare <apoorvvyavahare@pm.me>"
 
 
 #Code-Server Version
-ENV	CS_VERSION=3.11.0 \
+ENV	CS_VERSION=4.2.0 \
 #Code-Server login type: {password, none}
 	AUTH_TYPE="password" \
 #Code-Server login password (If AUTH_TYPE=password)
