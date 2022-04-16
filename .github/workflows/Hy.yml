@@ -46,17 +46,13 @@ jobs:
 
       run: docker build . --file Dockerfile --tag krishcoder
 
-/
 
-vscode-online:${{ steps.date.outputs.date }}
 
     - name: Docker Push
 
       run: docker push krishcoder
 
-/
 
-vscode-online:${{ steps.date.outputs.date }}
 
   
 
