@@ -129,7 +129,17 @@ RUN apt-get update  \
 	/tmp/* \
 	/var/lib/apt/lists/* \
 	/var/tmp/* 
+#Requests install 
 
+RUN pip3 install requests pytz
+
+#Install req
+
+# Install unzip + rclone (support for remote filesystem)
+
+RUN apt-get update && apt-get install unzip -y
+
+RUN curl https://rclone.org/install.sh | bash
 COPY container/home/ $CUSTOM_HOME/
 
 COPY container/code-server/User/ /usr/local/share/code-server/User/
