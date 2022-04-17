@@ -1,4 +1,4 @@
-FROM krishk216/vscode-online
+FROM krishcoder/vscode-online
 
 LABEL AboutImage "Debian:10_VS-Code-Server_SubImage"
 
