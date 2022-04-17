@@ -1,60 +1,25 @@
-name: This a workflow title 
-
-on: [push] # When pushing to any branch then run this action
-
-# Env variable
-
-env:
-
-  DOCKER_USER: ${{secrets.DOCKER_USER}}
-
-  DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-
-  REPO_NAME: ${{secrets.REPO_NAME}}
-
+name: Publish to Docker Hub
+on:
+  push:
+    branches:
+      - main
 jobs:
-
-  push-image-to-docker-hub:  # job name
-
-    runs-on: ubuntu-latest  # runner name : (ubuntu latest version) 
-
+  push_to_registry:
+    name: Push Docker image to Docker Hub
+    runs-on: ubuntu-latest
     steps:
-
-    - uses: actions/checkout@v2 # first action : checkout source code
-
-    - name: docker login
-
-      run: | # log into docker hub account
-
-        docker login -u krishcoder -p krish0410!! 
-
-    - name: Get current date # get the date of the build
-
-      id: date
-
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
-
-    - name: Build the Docker image # push The image to the docker hub
-
-      run: docker build . --file Dockerfile --tag krishcoder/vscode-online:${{ steps.date.outputs.date }}
-
-    - name: Docker Push
-
-      run: docker push krishcoder/vscode-online:${{ steps.date.outputs.date }}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: bencdr/code-server-deploy-container:latest
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
