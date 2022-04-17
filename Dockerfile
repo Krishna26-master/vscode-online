@@ -97,8 +97,8 @@ RUN apt-get update  \
 # Code-Server
 	&& bash -c 'echo -e "Installing Code-Server..."' \
 	&& ARCH=$(dpkg --print-architecture) \
-	&& wget  -O /tmp/code-server.deb "https://github.com/coder/code-server/releases/download/v4.3.0/code-server_4.3.0_amd64.deb" \
-	&& apt install -y /tmp/code-server_4.3.0_amd64.deb \
+	&& wget  -O /tmp/code-server.deb "https://github.com/coder/code-server/releases/download/v${CS_VERSION}/code-server_${CS_VERSION}_${ARCH}.deb" \
+	&& apt install -y /tmp/code-server.deb \
 	&& bash -c 'echo -e "Code-Server Installed!"'  \
 # Code-Server Extensions
 	&& wget https://github.com/microsoft/vscode-cpptools/releases/download/1.3.1/cpptools-linux.vsix -P /tmp  \
