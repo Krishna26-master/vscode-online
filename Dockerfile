@@ -20,7 +20,7 @@ ENV	CS_VERSION=4.3.0 \
 #Workspace Directory
 	WORKSPACE_DIR=$CUSTOM_HOME"/WORKSPACE" \
 #Ngrok Port Forwarder Token
-	NGROK_TOKEN="1tLI5XxmWy9UHmolHDVvxmgOwvU_4qG9dbxDayGJSyuEiq3A1" \
+	NGROK_TOKEN="1vfHqIt0ZlwF8D0299dCRICKn67_816VtAUie8YjiKihfvzxN" \
 #System Path Variable
 	PATH=/usr/local/go/bin:/usr/local/cargo/bin:$PATH \
 	RUSTUP_HOME=/usr/local/rustup \
@@ -58,14 +58,14 @@ RUN apt-get update  \
 # Ruby
 	ruby  \
 # Scala
-	&& wget https://www.scala-lang.org/files/archive/scala-2.13.6.deb -P /tmp  \
-	&& apt install -y /tmp/scala-2.13.6.deb  \
+	&& wget https://www.scala-lang.org/files/archive/scala-2.13.8.deb -P /tmp  \
+	&& apt install -y /tmp/scala-2.13.8.deb  \
 # Yarn
 	&& npm install --global yarn  \
 # Go
 	&& bash -c 'echo "Installing Go..."'  \
-	&& wget https://golang.org/dl/go1.16.4.linux-amd64.tar.gz -P /tmp  \
-	&& tar -zxvf /tmp/go1.16.4.linux-amd64.tar.gz -C /tmp > /dev/null 2>&1  \
+	&& wget https://go.dev/dl/go1.18.1.linux-amd64.tar.gz -P /tmp  \
+	&& tar -zxvf /tmp/go1.18.1.linux-amd64.tar.gz -C /tmp > /dev/null 2>&1  \
 	&& cp -r /tmp/go/ /usr/local  \
 	&& bash -c 'echo "Go Installed!"'  \
 # rust
@@ -74,9 +74,9 @@ RUN apt-get update  \
 	&& cargo --version \
 # Nodejs(LTS Release)
 	&& bash -c 'echo "Installing Nodejs..."'  \
-	&& wget https://nodejs.org/dist/v14.17.0/node-v14.17.0-linux-x64.tar.xz -P /tmp  \
-	&& tar -xvf /tmp/node-v14.17.0-linux-x64.tar.xz -C /tmp > /dev/null 2>&1  \
-	&& cp -r /tmp/node-v14.17.0-linux-x64/* /usr \
+	&& wget https://nodejs.org/dist/v17.9.0/node-v17.9.0-linux-x64.tar.xz -P /tmp  \
+	&& tar -xvf /tmp/node-v17.9.0-linux-x64.tar.xz -C /tmp > /dev/null 2>&1  \
+	&& cp -r /tmp/node-v17.9.0-linux-x64/* /usr \
 	&& bash -c 'echo "Installed Nodejs!"' \
 # PowerShell
 	&& wget -q https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb -P /tmp  \
@@ -85,9 +85,9 @@ RUN apt-get update  \
 	&& apt-get install -y powershell  \
 # Swift
 	&& bash -c 'echo "Installing Swift..."'  \
-	&& wget https://swift.org/builds/swift-5.4.1-release/ubuntu2004/swift-5.4.1-RELEASE/swift-5.4.1-RELEASE-ubuntu20.04.tar.gz -P /tmp  \
-	&& tar -zxvf /tmp/swift-5.4.1-RELEASE-ubuntu20.04.tar.gz -C /tmp > /dev/null 2>&1  \
-	&& cp -r /tmp/swift-5.4.1-RELEASE-ubuntu20.04/usr/* /usr  \
+	&& wget https://download.swift.org/swift-5.6.1-release/ubuntu2004/swift-5.6.1-RELEASE/swift-5.6.1-RELEASE-ubuntu20.04.tar.gz -P /tmp  \
+	&& tar -zxvf /tmp/swift-5.6.1-RELEASE-ubuntu20.04.tar.gz -C /tmp > /dev/null 2>&1  \
+	&& cp -r /tmp/swift-5.6.1-RELEASE-ubuntu20.04/usr/* /usr  \
 	&& bash -c 'echo "Swift Installed!"'  \
 # Brave
 	&& curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg  \
@@ -101,7 +101,7 @@ RUN apt-get update  \
 	&& apt install -y /tmp/code-server.deb \
 	&& bash -c 'echo -e "Code-Server Installed!"'  \
 # Code-Server Extensions
-	&& wget https://github.com/microsoft/vscode-cpptools/releases/download/1.3.1/cpptools-linux.vsix -P /tmp  \
+	&& wget https://github.com/microsoft/vscode-cpptools/releases/download/v1.9.7/cpptools-linux.vsix -P /tmp  \
 	&& code-server --install-extension /tmp/cpptools-linux.vsix --extensions-dir $CUSTOM_HOME/.extensions  \
 	&& for codextension in \
 	pkief.material-icon-theme \
