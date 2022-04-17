@@ -1,4 +1,4 @@
-FROM krishcoder/vscode-online:2022-04-17--22-00
+FROM krishcoder/vscode-online
 
 LABEL AboutImage "Debian:10_VS-Code-Server_SubImage"
 
